@@ -1,10 +1,11 @@
 #include "OrbitCamera.h"
 #include <iostream>
 
-void OrbitCamera::update(InputSnapshot& snapshot, float duration) const
+void OrbitCamera::update(InputSnapshot& snapshot, float duration)
 {
     if (snapshot.E)
-        std::cout << "Press E " << std::endl;
+        m_position.x += 0.5f;
+        //std::cout << "Press E " << std::endl;
 
     if (snapshot.A)
         std::cout << "Press A " << std::endl;
@@ -22,7 +23,7 @@ Camera3D OrbitCamera::getCamera3D() const
     return camera;
 }
 
-void OrbitCamera::reset() const
+void OrbitCamera::reset()
 {
 }
 

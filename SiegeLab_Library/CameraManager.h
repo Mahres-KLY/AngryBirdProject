@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ICameraController.h"
+#include "InputController.h"
 #include "raylib.h"
 
 class CameraManager
