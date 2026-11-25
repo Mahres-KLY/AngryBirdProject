@@ -1,9 +1,9 @@
 #include "CameraManager.h"
-#include "OrbitCamera.h"
+#include "FreeCamera.h"
 
 CameraManager::CameraManager()
 {
-    m_currentCamera = new OrbitCamera();
+    m_currentCamera = new FreeCamera();
 }
 
 Camera3D CameraManager::getCamera()
@@ -13,5 +13,5 @@ Camera3D CameraManager::getCamera()
 
 void CameraManager::update(InputSnapshot& snapshot, float duration)
 {
-    m_currentCamera->update(snapshot, duration);
+    m_currentCamera->updateCamera(snapshot, duration);
 }

@@ -1,13 +1,14 @@
 #include "OrbitCamera.h"
 #include <iostream>
 
-void OrbitCamera::update(InputSnapshot& snapshot, float duration)
+void OrbitCamera::updateCamera(InputSnapshot& snapshot, float duration)
 {
     if (snapshot.E)
         m_position.x += 0.5f;
-        //std::cout << "Press E " << std::endl;
+        std::cout << "Press E " << std::endl;
 
     if (snapshot.A)
+        m_position.x -= 0.5f;
         std::cout << "Press A " << std::endl;
 
 }

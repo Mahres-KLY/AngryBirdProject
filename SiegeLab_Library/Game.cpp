@@ -21,7 +21,6 @@ void Game::Run()
 	// game loop
 	while (!WindowShouldClose())		// run the loop until the user presses ESCAPE or presses the Close button on the window
 	{
-		
 		InputSnapshot snapshot = inputController.capture();
 		cameraManager.update(snapshot, 0);
 

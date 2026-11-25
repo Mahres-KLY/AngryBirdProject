@@ -33,10 +33,10 @@
     <ClInclude Include="ICameraController.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="OrbitCamera.h">
+    <ClInclude Include="FreeCamera.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="FreeCamera.h">
+    <ClInclude Include="OrbitCamera.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
