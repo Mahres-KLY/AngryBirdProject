@@ -16,6 +16,5 @@ class FreeCamera : public ICameraController
 	void reset() override;
 	std::string nom() const override;
 
-	
 };
 
