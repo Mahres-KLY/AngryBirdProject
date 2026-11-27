@@ -22,14 +22,14 @@ void Game::Run()
 	while (!WindowShouldClose())		// run the loop until the user presses ESCAPE or presses the Close button on the window
 	{
 		InputSnapshot snapshot = inputController.capture();
-		cameraManager.update(snapshot, 0);
+		cameraManager.update(snapshot, GetFrameTime());
 
 		// drawing
 		BeginDrawing();
 
 		ClearBackground(RAYWHITE);
 		BeginMode3D(cameraManager.getCamera());
-		DrawGrid(20, 1.0f);
+		DrawGrid(2000, 1.0f);
 		DrawCube(cubePosition, 2.0f, 2.0f, 2.0f, RED);
 		DrawCubeWires(cubePosition, 2.0f, 2.0f, 2.0f, MAROON);
 		EndMode3D();

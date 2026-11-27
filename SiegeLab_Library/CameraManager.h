@@ -10,7 +10,7 @@ class CameraManager
 
 public:
 	CameraManager();
-	Camera3D getCamera();	
+	Camera3D getCamera();
 	void update(InputSnapshot& snapshot, float duration);
 
 };
