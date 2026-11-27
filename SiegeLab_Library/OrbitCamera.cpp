@@ -1,27 +1,31 @@
 #include "OrbitCamera.h"
 #include <iostream>
 
+#include "raylib.h"
+#include "raymath.h"
+
+OrbitCamera::OrbitCamera()
+{
+    m_OrbitCamera.position = { 0.0f, 0.0f, 5.0f }; // Camera position
+    m_OrbitCamera.target = { 1.0f, 0.0f, 0.0f };      // Camera looking at point
+    m_OrbitCamera.up = { 0.0f, 1.0f, 0.0f };          // Camera up vector (rotation towards target)
+    m_OrbitCamera.fovy = 45.0f;                                // Camera field-of-view Y
+    m_OrbitCamera.projection = CAMERA_PERSPECTIVE;             // Camera projection type
+}
+
 void OrbitCamera::updateCamera(InputSnapshot& snapshot, float duration)
 {
-    if (snapshot.E)
-        m_position.x += 0.5f;
-        std::cout << "Press E " << std::endl;
-
-    if (snapshot.A)
-        m_position.x -= 0.5f;
-        std::cout << "Press A " << std::endl;
+    if (IsMouseButtonDown(1)) // only rotate on right click
+    {
+        Vector2 mousePosition = GetMousePosition();
+    }
 
 }
 
+
 Camera3D OrbitCamera::getCamera3D() const
 {
-    Camera3D camera = { 0 };
-    camera.position = m_position; // Camera position
-    camera.target = { 0.0f, 0.0f, 0.0f };      // Camera looking at point
-    camera.up = { 0.0f, 1.0f, 0.0f };          // Camera up vector (rotation towards target)
-    camera.fovy = 45.0f;                                // Camera field-of-view Y
-    camera.projection = CAMERA_PERSPECTIVE;             // Camera projection type
-    return camera;
+    return m_OrbitCamera;
 }
 
 void OrbitCamera::reset()

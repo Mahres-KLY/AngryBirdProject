@@ -5,8 +5,11 @@
 
 class OrbitCamera : public ICameraController
 {
-	// Hérité via ICameraController
-	Vector3 m_position = { 10.0f, 10.0f, 10.0f };
+public:
+	OrbitCamera();
+
+private:
+	Camera3D m_OrbitCamera;
 	void updateCamera(InputSnapshot& snapshot, float duration) override;
 	Camera3D getCamera3D() const override;
 	void reset() override;

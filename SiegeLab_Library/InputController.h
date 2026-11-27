@@ -7,7 +7,9 @@ struct InputSnapshot
 	bool E = false;
 	bool W = false;
 
+	bool mouseLeft = false;
 	Vector2 mouseDelta;
+	Vector2 mousePosition;
 };
 
 class InputController
